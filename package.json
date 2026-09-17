@@ -1,0 +1,35 @@
+{
+  "name": "typst-editor",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anttihil/typst-editor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anttihil/typst-editor/issues"
+  },
+  "homepage": "https://github.com/anttihil/typst-editor#readme",
+  "dependencies": {
+    "@myriaddreamin/typst-ts-renderer": "^0.7.0",
+    "@myriaddreamin/typst-ts-web-compiler": "^0.7.0",
+    "@myriaddreamin/typst.ts": "^0.7.0",
+    "@tauri-apps/api": "^2.11.1",
+    "@tauri-apps/plugin-dialog": "^2.7.3",
+    "vite": "^8.3.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4"
+  }
+}

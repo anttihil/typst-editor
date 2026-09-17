@@ -1,0 +1,70 @@
+:root {
+  color: #e8edf3;
+  background: #10131a;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.app {
+  display: grid;
+  grid-template-columns: 220px minmax(320px, 1fr) minmax(400px, 1fr);
+  grid-template-areas: "files editor preview";
+  height: 100vh;
+}
+
+.editor-pane, .files-pane, .preview-pane {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-pane { grid-area: editor; border-right: 1px solid #2b313c; }
+.files-pane { grid-area: files; border-right: 1px solid #2b313c; background: #151923; }
+header {
+  height: 48px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #2b313c;
+  color: #9ba7b8;
+  font-size: 13px;
+}
+
+.file-name { color: #e8edf3; font-weight: 600; }
+#status { font-size: 12px; }
+button { font: inherit; }
+#open-folder { padding: 5px 8px; border: 1px solid #465264; border-radius: 5px; background: #242b38; color: #e8edf3; cursor: pointer; font-size: 12px; }
+#open-folder:hover { background: #303a4b; }
+.file-list { flex: 1; overflow: auto; padding: 8px; }
+.file-list p { margin: 8px; color: #9ba7b8; font-size: 13px; line-height: 1.5; }
+.file { display: block; width: 100%; padding: 8px; overflow: hidden; border: 0; border-radius: 4px; background: transparent; color: #c8d0dc; cursor: pointer; text-align: left; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
+.file:hover, .file.active { background: #2b3546; color: #fff; }
+
+#editor {
+  width: 100%;
+  height: calc(100vh - 48px);
+  resize: none;
+  border: 0;
+  outline: 0;
+  padding: 22px;
+  background: #10131a;
+  color: #e8edf3;
+  font: 15px/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  tab-size: 2;
+}
+
+.preview-pane { grid-area: preview; background: #e8eaed; color: #16181d; }
+.preview { overflow: auto; padding: 32px; text-align: center; }
+.preview svg { display: block; width: 100%; max-width: 100%; height: auto; margin: 0 auto 24px; box-shadow: 0 2px 12px #0002; }
+.error { max-width: 700px; margin: 0 auto; padding: 16px; overflow: auto; text-align: left; white-space: pre-wrap; border-radius: 6px; background: #fff0f0; color: #a41414; font: 13px/1.5 ui-monospace, monospace; }
+
+@media (max-width: 760px) {
+  .app { grid-template-columns: 1fr; grid-template-areas: "files" "editor" "preview"; height: auto; }
+  .files-pane { border-right: 0; border-bottom: 1px solid #2b313c; max-height: 180px; }
+  .editor-pane { border-right: 0; border-bottom: 1px solid #2b313c; }
+  #editor { height: 46vh; }
+  .preview-pane { min-height: 54vh; }
+}

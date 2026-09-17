@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typst Editor</title>
+  </head>
+  <body>
+    <main class="app">
+      <section class="editor-pane">
+        <header>
+          <span id="file-name" class="file-name">No file selected</span>
+          <span id="status">Loading Typst…</span>
+        </header>
+        <textarea id="editor" aria-label="Typst source" spellcheck="false"></textarea>
+      </section>
+      <aside class="files-pane">
+        <header><span>Files</span><button id="open-folder" type="button">Open folder</button></header>
+        <div id="file-list" class="file-list"><p>Select a folder to see its .typ files.</p></div>
+      </aside>
+      <section class="preview-pane" aria-label="Document preview">
+        <header>Preview</header>
+        <div id="preview" class="preview"></div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
