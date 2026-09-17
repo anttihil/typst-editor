@@ -46,15 +46,17 @@ button { font: inherit; }
 #editor {
   width: 100%;
   height: calc(100vh - 48px);
-  resize: none;
-  border: 0;
-  outline: 0;
-  padding: 22px;
-  background: #10131a;
-  color: #e8edf3;
-  font: 15px/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  tab-size: 2;
+  background: #fff;
 }
+
+.cm-editor { height: 100%; background: #fff; color: #1f2328; }
+.cm-editor.cm-focused { outline: 0; }
+.cm-scroller { overflow: auto; font: 15px/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.cm-content { padding: 22px 18px 22px 4px; caret-color: #1f2328; }
+.cm-gutters { border: 0; background: #fff; color: #57606a; }
+.cm-activeLine, .cm-activeLineGutter { background: #f6f8fa; }
+.cm-selectionBackground, .cm-content ::selection { background: #b6d7ff !important; }
+.cm-cursor, .cm-dropCursor { border-left-color: #1f2328; }
 
 .preview-pane { grid-area: preview; background: #e8eaed; color: #16181d; }
 .preview { overflow: auto; padding: 32px; text-align: center; }
